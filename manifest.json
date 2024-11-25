@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "DDAS Browser Extension",
+    "version": "1.0",
+    "description": "Detect and alert for duplicate file downloads.",
+    "permissions": [
+        "downloads",
+        "storage",
+        "activeTab",
+        "notifications"
+    ],
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon.png",
+            "48": "icon.png",
+            "128": "icon.png"
+        }
+    }
+}

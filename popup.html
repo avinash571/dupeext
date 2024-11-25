@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DDAS Extension</title>
+  <style>
+    /* Add relevant styles for popup */
+    body {
+      font-family: Arial, sans-serif;
+      width: 400px; /* Increase the width of the popup */
+      height: auto; /* Height will adjust based on content */
+      padding: 20px; /* Add padding to the body */
+      box-sizing: border-box; /* Include padding in width/height calculations */
+      border-radius: 20px; /* Added for curved sides */
+      background-color: white; /* Set background color for visibility */
+      position: relative; /* Position for the close button */
+      overflow: hidden; /* Prevent overflow */
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #warning-section {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px; /* Add some margin for spacing */
+      text-align: center; /* Center text in the warning section */
+    }
+
+    /* Style for the close button */
+    #close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background: transparent;
+      font-size: 20px;
+      cursor: pointer;
+      color: black; /* Change this to your preferred color */
+    }
+
+    /* Style for the text elements */
+    p {
+      font-size: 18px; /* Increase the size of the paragraph text */
+      margin: 10px 0; /* Add margin for spacing */
+    }
+
+    button {
+      font-size: 16px; /* Increase button text size */
+      padding: 10px 15px; /* Increase button padding */
+      margin-top: 10px; /* Add margin for spacing */
+      cursor: pointer; /* Change cursor to pointer */
+      border-radius: 5px; /* Rounded corners for buttons */
+      border: none; /* Remove default border */
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background transition and transform */
+    }
+
+    /* Style for warning buttons */
+    #redirect-btn, #download-anyway-btn {
+      display: inline-block; /* Make buttons inline */
+      margin-right: 10px; /* Space between buttons */
+      background-color: #808080; /* Default background color */
+      color: black; /* Text color */
+    }
+
+    /* Hover effect for buttons with animation */
+    #redirect-btn:hover {
+      background-color: #13f207; /* Darker blue on hover */
+      transform: scale(1.05); /* Scale up the button */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    }
+
+    #download-anyway-btn:hover {
+      background-color: #ed1206; /* Darker blue on hover */
+      transform: scale(1.05); /* Scale up the button */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    }
+
+
+    /* Style for the header images */
+    #header-icon {
+      display: block; /* Make the image a block element */
+      margin: 0 auto; /* Center the image */
+      width: 150px; /* Set a larger width for the alert.png header image */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    #header-icon1 {
+      display: block; /* Make the image a block element */
+      margin: 0 auto; /* Center the image */
+      width: 100px; /* Set a smaller width for the alert1.png header image */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Style for the warning message */
+    #warning-message {
+      color: red; /* Set text color to red */
+      font-size: 24px; /* Increase font size */
+      font-weight: bold; /* Make text bold */
+      text-align: center; /* Center the text */
+      margin-top: 10px; /* Add margin for spacing */
+    }
+
+    /* Style for the download icons inside the button */
+    .download-icon {
+      width: 35px; /* Set width for the download icon */
+      margin-left: 10px; /* Space between the text and icon */
+      vertical-align: middle; /* Align icon vertically */
+    }
+
+    /* Style for the new download image */
+    
+  </style>
+</head>
+<body>
+  <button id="close-btn" title="Close">X</button>
+  <div>
+    <img id="header-icon1" src="alert1.png" alt="Alert Header 1"> <!-- Added alert1.png with medium size -->
+    
+    <p id="warning-message">Warning: This file already exists in the system.</p> <!-- Added warning message -->
+  </div>
+  <div>
+    <p><strong>Download URL:</strong> <span id="download-url"></span></p>
+    <p><strong>File Name:</strong> <span id="file-name"></span></p>
+    <p><strong>File Size:</strong> <span id="file-size"></span></p>
+    <p><strong>Location:</strong> <span id="file-location"></span></p>
+  </div>
+  <div id="warning-section" class="hidden">
+    <button id="redirect-btn" class="hidden">Redirect to File</button>
+    <button id="download-anyway-btn" class="hidden">
+      Download Anyway
+      
+      
+    </button>
+  </div>
+  <script src="popup.js"></script> <!-- Include your popup.js file -->
+</body>
+</html>
